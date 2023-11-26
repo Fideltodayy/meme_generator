@@ -1,9 +1,11 @@
-// import Meme from "./Meme"
+import Meme from "./components/Meme"
+import Header from "./components/Header"
 function App() {
 
   return (
     <div className="App">
-      <h1>React App</h1>
+      <Header/>
+      <Meme/>
     </div>
   )
 }
