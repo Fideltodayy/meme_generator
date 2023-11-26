@@ -73,8 +73,8 @@ export default function () {
     
     
     return(
-        <main className=" p-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 ">
+        <main className="p-4 md:w-1/2 m-auto">
+            <div className="grid grid-cols-1  gap-4 mb-6 ">
                 <input 
                     type="text"
                     name="topText"
@@ -94,7 +94,7 @@ export default function () {
                 <button className=" mt-2 grid-cols-1 border-2 border-black rounded-md py-2 bg-blue-950 text-white cursor-pointer w-full font-extrabold text-xl" onClick={getMemeImage}>Next Photo</button>
             </div>
             <div className="meme" ref={memeContainerRef}>
-                <img src={meme.randomImage} className="meme--image" />
+                <img src={meme.randomImage} className="meme--image md:m-auto" />
                 <div className=" h-8 absolute bottom-0 right-0">
                     <p className="text-white text-center text-sm">@Fideltodayy</p>
                 </div>
@@ -102,7 +102,7 @@ export default function () {
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
 
             </div>
-            <button className="mt-2 grid-cols-1 border-2 border-black rounded-md py-2 bg-blue-950 text-white cursor-pointer w-full font-extrabold text-xl"onClick={handleDownload}>Save Image</button>
+            <button className="mt-2 grid-cols-1 border-2 border-black rounded-md py-2 bg-blue-950 text-white cursor-pointer w-full font-extrabold text-xl"onClick={handleDownload}>Save Meme</button>
 
         </main>
     )
