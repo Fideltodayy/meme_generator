@@ -41,8 +41,9 @@ export default function () {
     
             // Set font properties including the Architects Daughter font
             context.font = 'bold 15px "impact", cursive'; // Adjust size as needed
-            context.fillStyle = 'white'; // Adjust text color as needed
-            context.textAlign = 'center';
+            context.fillStyle = 'white'; // Text fill color
+            context.strokeStyle = 'black'; // Text border color
+            context.lineWidth = 5; // Adjust border width as needed            context.textAlign = 'center';
     
             // Draw the top text in the center
             context.fillText(meme.topText, canvas.width / 2, 40);
