@@ -39,7 +39,7 @@ export default function () {
             // Draw the image onto the canvas
             context.drawImage(image, 0, 0, canvas.width, canvas.height);
     
-            // Set font properties
+            // Set font properties including the Architects Daughter font
             context.font = 'bold 30px "impact", cursive'; // Adjust size as needed
             context.fillStyle = 'white'; // Adjust text color as needed
             context.textAlign = 'center';
@@ -53,13 +53,23 @@ export default function () {
             // Get the canvas data as a data URL
             const dataUrl = canvas.toDataURL('image/png');
     
-            // Use file-saver to trigger the download
-            saveAs(dataUrl, 'meme.png');
+            // Create a temporary link element
+            const downloadLink = document.createElement('a');
+            downloadLink.href = dataUrl;
+            downloadLink.download = 'meme.png';
+    
+            // Append the link to the document and trigger a click event
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+    
+            // Remove the link from the document
+            document.body.removeChild(downloadLink);
         };
     
         // Set the source of the image to the URL from your state
         image.src = meme.randomImage;
     };
+    
     
     
     return(
