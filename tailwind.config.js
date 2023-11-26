@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'arch': ['Architects Daughter', 'cursive']
+    }
   },
   plugins: [],
 }

@@ -23,14 +23,14 @@ export default function () {
     }
     
     return(
-        <main>
-            <div className="form grid grid-cols-2 grid-rows-2 h-40 w-40 gap-4 mb-17">
+        <main className=" p-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 ">
                 <input 
                     type="text"
                     name="topText"
                     placeholder="Top Text"
                     value={meme.topText}
-                    className="form--input border-4 border-black rounded-xl"
+                    className="form--input  border-4 border-black rounded-md p-2 w-full"
                     onChange={handleChange}
 />
                 <input 
@@ -38,13 +38,16 @@ export default function () {
                     name="bottomText"
                     placeholder="Bottom Text"
                     value={meme.bottomText}
-                    className="form--input border-4 border-black rounded-xl text-indent-2"
+                    className="form--input  border-4 border-black rounded-md p-2  w-full"
                     onChange={handleChange}
                 />
-                <button className=" grid-cols-1 border-2 border-black rounded-lg bg-gradient-to-b bg-violet-950 text-white cursor-pointer" onClick={getMemeImage}>Generate</button>
+                <button className=" mt-2 grid-cols-1 border-2 border-black rounded-lg bg-blue-950 text-white cursor-pointer w-full font-extrabold text-xl" onClick={getMemeImage}>Generate</button>
             </div>
             <div className="meme">
                 <img src={meme.randomImage} className="meme--image" />
+                <div className=" h-8 absolute bottom-0 right-0">
+                    <p className="text-white text-center text-sm">@Fideltodayy</p>
+                </div>
                 <h2 className="meme--text top">{meme.topText}</h2>
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
