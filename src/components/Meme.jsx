@@ -6,7 +6,7 @@ export default function () {
     const [meme, setMeme] = React.useState({
         topText: "",
         bottomText: "",
-        randomImage: "http://i.imgflip.com/1bij.jpg",
+        randomImage: "wanda.jpeg",
     })
 
     const [allMemeImages,setAllMemeImages] = React.useState(memesData)
@@ -78,7 +78,7 @@ export default function () {
                 <input 
                     type="text"
                     name="topText"
-                    placeholder="Top Text"
+                    placeholder="Enter the top Text"
                     value={meme.topText}
                     className="form--input  border-4 border-black rounded-md p-2 w-full"
                     onChange={handleChange}
@@ -86,12 +86,12 @@ export default function () {
                 <input 
                     type="text"
                     name="bottomText"
-                    placeholder="Bottom Text"
+                    placeholder="Enter the bottom Text"
                     value={meme.bottomText}
                     className="form--input  border-4 border-black rounded-md p-2  w-full"
                     onChange={handleChange}
                 />
-                <button className=" mt-2 grid-cols-1 border-2 border-black rounded-lg bg-blue-950 text-white cursor-pointer w-full font-extrabold text-xl" onClick={getMemeImage}>Generate</button>
+                <button className=" mt-2 grid-cols-1 border-2 border-black rounded-md py-2 bg-blue-950 text-white cursor-pointer w-full font-extrabold text-xl" onClick={getMemeImage}>Next Photo</button>
             </div>
             <div className="meme" ref={memeContainerRef}>
                 <img src={meme.randomImage} className="meme--image" />
@@ -102,7 +102,7 @@ export default function () {
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
 
             </div>
-            <button className="mt-2 grid-cols-1 border-2 border-black rounded-lg bg-blue-950 text-white cursor-pointer w-full font-extrabold text-xl"onClick={handleDownload}>Save Image</button>
+            <button className="mt-2 grid-cols-1 border-2 border-black rounded-md py-2 bg-blue-950 text-white cursor-pointer w-full font-extrabold text-xl"onClick={handleDownload}>Save Image</button>
 
         </main>
     )
