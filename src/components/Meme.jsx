@@ -50,6 +50,8 @@ export default function () {
                 </div>
                 <h2 className="meme--text top">{meme.topText}</h2>
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
+                <a className="mt-2 grid-cols-1 border-2 border-black rounded-lg bg-blue-950 text-white cursor-pointer w-full font-extrabold text-xl " href="/saved.jpg" download="Saved.jpg" >Save Image</a>
+
             </div>
 
         </main>
