@@ -40,7 +40,7 @@ export default function () {
             context.drawImage(image, 0, 0, canvas.width, canvas.height);
     
             // Set font properties including the Architects Daughter font
-            context.font = 'bold 30px "impact", cursive'; // Adjust size as needed
+            context.font = 'bold 15px "impact", cursive'; // Adjust size as needed
             context.fillStyle = 'white'; // Adjust text color as needed
             context.textAlign = 'center';
     
