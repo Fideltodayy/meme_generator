@@ -2,6 +2,7 @@ import React from "react"
 import memesData from "../../memesDAta"
 import {saveAs} from "file-saver"
 import { useRef } from "react"
+import { useEffect } from "react"
 export default function () {
     const [meme, setMeme] = React.useState({
         topText: "",
@@ -9,7 +10,15 @@ export default function () {
         randomImage: "wanda.jpeg",
     })
 
-    const [allMemeImages,setAllMemeImages] = React.useState(memesData)
+    const [allMemeImages,setAllMemeImages] = React.useState([])
+
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+        .then(response => response.json())
+        .then(response => setAllMemeImages(response))
+    }, [])
+    console.log(allMemeImages)
+    
     const memeContainerRef = useRef(null);
 
     function getMemeImage() {
@@ -39,17 +48,23 @@ export default function () {
             // Draw the image onto the canvas
             context.drawImage(image, 0, 0, canvas.width, canvas.height);
     
-            // Set font properties including the Architects Daughter font
-            context.font = 'bold 15px "impact", cursive'; // Adjust size as needed
+            // Set font properties to match the CSS styling
+            const fontSize = 2 * 16; // Assuming 1em = 16px
+            context.font = `bold ${fontSize}px "Arial Black", sans-serif`; // Use Arial Black
             context.fillStyle = 'white'; // Text fill color
-            context.strokeStyle = 'black'; // Text border color
-            context.lineWidth = 5; // Adjust border width as needed            context.textAlign = 'center';
+            context.textAlign = 'center';
     
             // Draw the top text in the center
-            context.fillText(meme.topText, canvas.width / 2, 40);
+            context.fillText(meme.topText.toUpperCase(), canvas.width / 2, 50);
     
             // Draw the bottom text in the center
-            context.fillText(meme.bottomText, canvas.width / 2, canvas.height - 20);
+            context.fillText(meme.bottomText.toUpperCase(), canvas.width / 2, canvas.height - 20);
+    
+            // Apply text shadow
+            context.shadowOffsetX = 2;
+            context.shadowOffsetY = 2;
+            context.shadowBlur = 5;
+            context.shadowColor = '#000';
     
             // Get the canvas data as a data URL
             const dataUrl = canvas.toDataURL('image/png');
@@ -75,7 +90,7 @@ export default function () {
     
     return(
         <main className="p-4 md:w-1/2 m-auto">
-            <div className="grid grid-cols-1  gap-4 mb-6 ">
+            <div className="grid grid-cols-1  gap-4 mb-6">
                 <input 
                     type="text"
                     name="topText"

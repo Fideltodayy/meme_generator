@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      'arch': ['Architects Daughter', 'cursive']
+      'arch': ['Architects Daughter', 'cursive'],
+      'poppins': ['Poppins', 'sans-serif']
+
     }
   },
   plugins: [],
