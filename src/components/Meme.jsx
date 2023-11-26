@@ -48,6 +48,7 @@ export default function () {
             // Draw the image onto the canvas
             context.drawImage(image, 0, 0, canvas.width, canvas.height);
     
+<<<<<<< HEAD
             // Set font properties to match the CSS styling
             const fontSize = 2 * 16; // Assuming 1em = 16px
             context.font = `bold ${fontSize}px "Arial Black", sans-serif`; // Use Arial Black
